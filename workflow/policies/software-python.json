@@ -1,0 +1,11 @@
+{
+  "version": "1",
+  "profile": "software-python-retry",
+  "required_evidence": ["contract-validation", "scope-diff", "trusted-acceptance-tests", "project-tests"],
+  "verifiers": ["retry-boundaries-v1"],
+  "required_files": ["src/retry_config.py", "tests/test_retry_config.py"],
+  "protected_paths": [".github/**", "workflow/**", "verifiers/**", "scripts/**", ".codex-plugin/**", ".agents/**", "skills/**", "AGENTS.md", "requirements-governance.lock", "pyproject.toml", "upstream/**", "hooks/**", ".claude/**"],
+  "timeout_seconds": 60,
+  "container_image": "python@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea",
+  "approval_identity": "maintainer"
+}

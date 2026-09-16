@@ -1,0 +1,29 @@
+{
+  "name": "evidence-gated",
+  "version": "0.1.0",
+  "description": "Codex 专用的任务合同、独立审批与证据验证工作流。",
+  "author": {
+    "name": "Anita",
+    "url": "https://github.com/2023Anita"
+  },
+  "homepage": "https://github.com/2023Anita/evidence-gated",
+  "repository": "https://github.com/2023Anita/evidence-gated",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Evidence-Gated · Codex",
+    "shortDescription": "让任务完成有合同、有证据、可核验。",
+    "longDescription": "Codex 工程治理 MVP：五个工作流入口、签名审批、范围检查、固定验收与 CI 门禁模板。",
+    "developerName": "Anita",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "为任务建立可审查的合同和计划",
+      "验证当前任务并解释缺少的证据",
+      "检查当前交付条件"
+    ]
+  }
+}

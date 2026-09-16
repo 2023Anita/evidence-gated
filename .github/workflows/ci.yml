@@ -1,0 +1,28 @@
+# 插件开发回归测试；不是业务项目的 required evidence-gate。
+name: Codex plugin tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Create project environment
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --require-hashes -r requirements-governance.lock
+      - name: Validate source bundle
+        run: .venv/bin/python scripts/validate_bundle.py
+      - name: Test governance and failure cases
+        run: .venv/bin/python -m unittest discover -s tests -v
+      - name: Run trusted fixture demonstration
+        run: .venv/bin/python scripts/demo.py --output "$RUNNER_TEMP/demo-result.json"

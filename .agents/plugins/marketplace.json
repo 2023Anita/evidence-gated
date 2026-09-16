@@ -1,0 +1,22 @@
+{
+  "name": "evidence-gated",
+  "interface": {
+    "displayName": "Evidence-Gated for Codex"
+  },
+  "plugins": [
+    {
+      "name": "evidence-gated",
+      "version": "0.1.0",
+      "description": "Codex 专用的任务合同、独立审批与证据验证工作流。",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

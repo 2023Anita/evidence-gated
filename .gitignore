@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.egw/
+build/
+dist/
+*.egg-info/
+.DS_Store
+graphify-out/
+distribution/plugins/

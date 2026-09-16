@@ -1,0 +1,7 @@
+{
+  "mode": "unconfigured",
+  "repository": null,
+  "base_branch": "main",
+  "required_check": "evidence-gate",
+  "workflow_path": ".github/workflows/evidence-gate.yml"
+}

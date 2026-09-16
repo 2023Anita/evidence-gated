@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-Gated 任务状态流程</title>
+  <desc id="desc">任务从草稿、规格批准、执行、验证、审查到 GitHub 就绪；失败、阻塞和人工升级从中间分支返回。</desc>
+  <rect width="1600" height="760" fill="#f7f7f2"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#167c80"/></marker><marker id="r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#cf4949"/></marker></defs>
+  <text x="800" y="68" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="40" font-weight="800" fill="#0b1533">一项任务怎样走到“可以合并”</text>
+  <text x="800" y="108" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="21" fill="#52617a">每次改变合同、计划或代码，都可能让旧审批或旧证据失效</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" text-anchor="middle">
+    <g fill="#fff" stroke="#b8c6d6" stroke-width="3">
+      <rect x="45" y="215" width="170" height="90" rx="20"/><rect x="250" y="215" width="170" height="90" rx="20"/><rect x="455" y="215" width="170" height="90" rx="20"/>
+      <rect x="660" y="215" width="170" height="90" rx="20"/><rect x="865" y="215" width="170" height="90" rx="20"/><rect x="1070" y="215" width="170" height="90" rx="20"/>
+    </g>
+    <rect x="1275" y="205" width="280" height="110" rx="24" fill="#0b1533"/>
+    <g font-size="20" font-weight="750" fill="#0b1533"><text x="130" y="270">DRAFT</text><text x="335" y="270">SPECIFIED</text><text x="540" y="270">APPROVED</text><text x="745" y="270">EXECUTING</text><text x="950" y="270">VERIFYING</text><text x="1155" y="270">REVIEWING</text></g>
+    <text x="1415" y="255" font-size="20" font-weight="800" fill="#fff">READY_TO_MERGE</text><text x="1415" y="286" font-size="16" fill="#8ce7dc">GitHub 当前条件满足</text>
+    <g stroke="#167c80" stroke-width="6" marker-end="url(#a)"><line x1="215" y1="260" x2="242" y2="260"/><line x1="420" y1="260" x2="447" y2="260"/><line x1="625" y1="260" x2="652" y2="260"/><line x1="830" y1="260" x2="857" y2="260"/><line x1="1035" y1="260" x2="1062" y2="260"/><line x1="1240" y1="260" x2="1267" y2="260"/></g>
+    <g font-size="15" fill="#52617a"><text x="232" y="200">合同合法</text><text x="437" y="200">签名通过</text><text x="642" y="200">范围允许</text><text x="847" y="200">固定快照</text><text x="1052" y="200">检查全过</text><text x="1255" y="200">审查 + CI</text></g>
+
+    <rect x="630" y="430" width="220" height="82" rx="18" fill="#fff1f1" stroke="#cf4949" stroke-width="3"/><text x="740" y="480" font-size="21" font-weight="800" fill="#a22e2e">FAILED</text>
+    <rect x="900" y="430" width="220" height="82" rx="18" fill="#fff3cf" stroke="#d19a1a" stroke-width="3"/><text x="1010" y="480" font-size="21" font-weight="800" fill="#795700">BLOCKED</text>
+    <rect x="1170" y="430" width="350" height="82" rx="18" fill="#eef2ff" stroke="#6576be" stroke-width="3"/><text x="1345" y="470" font-size="19" font-weight="800" fill="#3f4d8c">HUMAN_ESCALATION_REQUIRED</text><text x="1345" y="495" font-size="15" fill="#596691">需要人工重新判断风险或范围</text>
+    <g stroke="#cf4949" stroke-width="4" fill="none" marker-end="url(#r)"><path d="M950 310V382Q950 405 930 405H760Q740 405 740 422"/><path d="M950 310V422"/><path d="M1155 310V382Q1155 405 1190 405H1325Q1345 405 1345 422"/></g>
+    <path d="M740 520V585Q740 610 700 610H335Q315 610 315 570V315" fill="none" stroke="#167c80" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#a)"/>
+    <path d="M1010 520V585Q1010 635 930 635H745Q725 635 725 315" fill="none" stroke="#167c80" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#a)"/>
+    <path d="M1345 520V665Q1345 695 1265 695H335Q315 695 315 315" fill="none" stroke="#167c80" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#a)"/>
+    <text x="475" y="600" font-size="17" fill="#167c80">修复后重新执行</text><text x="860" y="627" font-size="17" fill="#167c80">依赖恢复后重新验证</text><text x="735" y="687" font-size="17" fill="#167c80">改变合同或风险后重新规格与审批</text>
+  </g>
+  <rect x="210" y="132" width="1180" height="38" rx="19" fill="#dff8f5"/><text x="800" y="158" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="18" fill="#0f686b">MERGED 只在 GitHub 已经确认实际合并后报告；CLI 本身不执行合并</text>
+</svg>

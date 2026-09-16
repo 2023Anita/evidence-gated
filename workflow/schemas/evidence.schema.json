@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "producer",
+    "created_at",
+    "verdict",
+    "authorizes_merge",
+    "checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "producer": {
+      "enum": [
+        "local",
+        "ci-context-unattested"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "authorizes_merge": {
+      "const": false
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "result"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "contract-validation",
+              "scope-diff",
+              "trusted-acceptance-tests",
+              "project-tests"
+            ]
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "BLOCKED"
+            ]
+          },
+          "tests_run": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "skipped": {
+            "const": 0
+          },
+          "isolation": {
+            "enum": [
+              "local-process-not-sandboxed",
+              "docker-no-network"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "task_id",
+        "contract_sha256",
+        "policy_sha256",
+        "governance_sha256",
+        "baseline_sha256",
+        "documents"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "contract_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "policy_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "governance_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "baseline_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "documents": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "spec.md",
+            "plan.md"
+          ],
+          "properties": {
+            "spec.md": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "plan.md": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "identity",
+        "method",
+        "namespace"
+      ],
+      "properties": {
+        "identity": {
+          "type": "string"
+        },
+        "method": {
+          "const": "ssh-signature"
+        },
+        "namespace": {
+          "const": "egw-spec-v1"
+        }
+      },
+      "additionalProperties": false
+    },
+    "git": {
+      "type": "object",
+      "required": [
+        "base_sha",
+        "head_sha",
+        "candidate_sha"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "base_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "head_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "candidate_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "subject_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exit_code": {
+      "enum": [
+        2,
+        10,
+        11,
+        12,
+        13,
+        14,
+        20
+      ]
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verdict": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "task_id",
+          "binding",
+          "approval",
+          "subject_sha256",
+          "changed_paths"
+        ],
+        "properties": {
+          "checks": {
+            "minItems": 4,
+            "maxItems": 4
+          }
+        }
+      }
+    }
+  ]
+}

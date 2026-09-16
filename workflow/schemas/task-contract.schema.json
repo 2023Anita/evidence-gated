@@ -1,0 +1,244 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]{0,63}$"
+    },
+    "profile": {
+      "const": "software-python-retry"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "risk": {
+      "type": "object",
+      "properties": {
+        "declared_level": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        }
+      },
+      "required": [
+        "declared_level",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "allowed_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "forbidden_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        }
+      },
+      "required": [
+        "allowed_paths",
+        "forbidden_paths"
+      ],
+      "additionalProperties": false
+    },
+    "operations": {
+      "type": "object",
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "read_project_files",
+              "edit_allowed_paths",
+              "run_registered_checks"
+            ]
+          }
+        },
+        "forbidden": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "read_credentials",
+              "upload_private_data",
+              "deploy",
+              "merge_pull_request",
+              "install_global_packages"
+            ]
+          }
+        }
+      },
+      "required": [
+        "allowed",
+        "forbidden"
+      ],
+      "additionalProperties": false
+    },
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^AC-[0-9]{3}$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 500
+          },
+          "verifier": {
+            "const": "retry-boundaries-v1"
+          }
+        },
+        "required": [
+          "id",
+          "statement",
+          "verifier"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "contract-validation",
+          "scope-diff",
+          "trusted-acceptance-tests",
+          "project-tests"
+        ]
+      }
+    },
+    "completion": {
+      "type": "object",
+      "properties": {
+        "all_required_checks": {
+          "const": "pass"
+        },
+        "allow_missing_evidence": {
+          "const": false
+        },
+        "allow_skipped_checks": {
+          "const": false
+        },
+        "require_current_revision": {
+          "const": true
+        }
+      },
+      "required": [
+        "all_required_checks",
+        "allow_missing_evidence",
+        "allow_skipped_checks",
+        "require_current_revision"
+      ],
+      "additionalProperties": false
+    },
+    "approvals": {
+      "type": "object",
+      "properties": {
+        "specification": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "const": true
+            }
+          },
+          "required": [
+            "required"
+          ],
+          "additionalProperties": false
+        },
+        "merge": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "const": true
+            }
+          },
+          "required": [
+            "required"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "specification",
+        "merge"
+      ],
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "classification": {
+          "const": "public-code"
+        },
+        "external_upload_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "classification",
+        "external_upload_allowed"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "profile",
+    "objective",
+    "risk",
+    "scope",
+    "operations",
+    "acceptance",
+    "required_evidence",
+    "completion",
+    "approvals",
+    "data"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

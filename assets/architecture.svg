@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-Gated 六层架构</title>
+  <desc id="desc">Codex 通过工作流和执行层进入任务合同、策略、验证与审计层，GitHub 负责最终合并门禁。</desc>
+  <rect width="1600" height="920" fill="#f7f7f2"/>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0b1533" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#167c80"/></marker>
+  </defs>
+  <text x="800" y="72" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="42" font-weight="800" fill="#0b1533">Evidence-Gated 六层架构</text>
+  <text x="800" y="112" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="22" fill="#41506d">提示词负责引导，受保护的验证与 GitHub 规则负责阻止不合格交付</text>
+
+  <rect x="80" y="170" rx="24" width="300" height="620" fill="#0b1533" filter="url(#shadow)"/>
+  <text x="230" y="235" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="30" font-weight="700" fill="#fff">Codex</text>
+  <text x="230" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="20" fill="#8ce7dc">五个原生 Skills</text>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="21" fill="#fff">
+    <rect x="125" y="325" width="210" height="56" rx="14" fill="#14264e"/><text x="230" y="361" text-anchor="middle">egw-spec</text>
+    <rect x="125" y="400" width="210" height="56" rx="14" fill="#14264e"/><text x="230" y="436" text-anchor="middle">egw-plan</text>
+    <rect x="125" y="475" width="210" height="56" rx="14" fill="#14264e"/><text x="230" y="511" text-anchor="middle">egw-build</text>
+    <rect x="125" y="550" width="210" height="56" rx="14" fill="#14264e"/><text x="230" y="586" text-anchor="middle">egw-verify</text>
+    <rect x="125" y="625" width="210" height="56" rx="14" fill="#14264e"/><text x="230" y="661" text-anchor="middle">egw-ship</text>
+  </g>
+  <text x="230" y="735" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="17" fill="#bdc9dd">负责理解、规划与调用</text>
+
+  <line x1="400" y1="480" x2="485" y2="480" stroke="#167c80" stroke-width="7" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif">
+    <rect x="510" y="170" rx="22" width="410" height="150" fill="#ffffff" stroke="#dbe2e8" stroke-width="2"/>
+    <circle cx="565" cy="225" r="28" fill="#2dd4bf"/><text x="565" y="234" text-anchor="middle" font-size="26" font-weight="800" fill="#0b1533">1</text>
+    <text x="615" y="220" font-size="27" font-weight="750" fill="#0b1533">工作流层</text><text x="615" y="258" font-size="19" fill="#53617a">把需求变成规格、计划和调用步骤</text>
+    <rect x="745" y="274" width="145" height="30" rx="15" fill="#e7faf7"/><text x="817" y="296" text-anchor="middle" font-size="16" fill="#167c80">引导性约束</text>
+
+    <rect x="510" y="345" rx="22" width="410" height="150" fill="#ffffff" stroke="#dbe2e8" stroke-width="2"/>
+    <circle cx="565" cy="400" r="28" fill="#2dd4bf"/><text x="565" y="409" text-anchor="middle" font-size="26" font-weight="800" fill="#0b1533">2</text>
+    <text x="615" y="395" font-size="27" font-weight="750" fill="#0b1533">状态与合同层</text><text x="615" y="433" font-size="19" fill="#53617a">保存目标、范围、风险和证据要求</text>
+    <rect x="730" y="449" width="160" height="30" rx="15" fill="#fff3cf"/><text x="810" y="471" text-anchor="middle" font-size="16" fill="#8a6400">签名后生效</text>
+
+    <rect x="510" y="520" rx="22" width="410" height="150" fill="#ffffff" stroke="#dbe2e8" stroke-width="2"/>
+    <circle cx="565" cy="575" r="28" fill="#f5b942"/><text x="565" y="584" text-anchor="middle" font-size="26" font-weight="800" fill="#0b1533">3</text>
+    <text x="615" y="570" font-size="27" font-weight="750" fill="#0b1533">策略与执行层</text><text x="615" y="608" font-size="19" fill="#53617a">限制路径、操作和已注册验证器</text>
+    <rect x="730" y="624" width="160" height="30" rx="15" fill="#fff3cf"/><text x="810" y="646" text-anchor="middle" font-size="16" fill="#8a6400">默认拒绝</text>
+
+    <rect x="510" y="695" rx="22" width="410" height="150" fill="#ffffff" stroke="#dbe2e8" stroke-width="2"/>
+    <circle cx="565" cy="750" r="28" fill="#f5b942"/><text x="565" y="759" text-anchor="middle" font-size="26" font-weight="800" fill="#0b1533">4</text>
+    <text x="615" y="745" font-size="27" font-weight="750" fill="#0b1533">独立验证层</text><text x="615" y="783" font-size="19" fill="#53617a">重跑测试并绑定合同与代码版本</text>
+    <rect x="705" y="799" width="185" height="30" rx="15" fill="#dff8f5"/><text x="797" y="821" text-anchor="middle" font-size="16" fill="#167c80">技术门禁核心</text>
+  </g>
+
+  <line x1="945" y1="480" x2="1035" y2="480" stroke="#167c80" stroke-width="7" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif">
+    <rect x="1060" y="245" rx="26" width="460" height="235" fill="#ffffff" stroke="#2dd4bf" stroke-width="4"/>
+    <circle cx="1125" cy="310" r="32" fill="#2dd4bf"/><text x="1125" y="320" text-anchor="middle" font-size="28" font-weight="800" fill="#0b1533">5</text>
+    <text x="1180" y="307" font-size="30" font-weight="800" fill="#0b1533">审计证据层</text>
+    <text x="1110" y="365" font-size="19" fill="#53617a">• 合同 / 策略 / 验证器摘要</text>
+    <text x="1110" y="403" font-size="19" fill="#53617a">• base / head / candidate 版本</text>
+    <text x="1110" y="441" font-size="19" fill="#53617a">• 检查结果与失败原因</text>
+
+    <rect x="1060" y="535" rx="26" width="460" height="235" fill="#0b1533"/>
+    <circle cx="1125" cy="600" r="32" fill="#f5b942"/><text x="1125" y="610" text-anchor="middle" font-size="28" font-weight="800" fill="#0b1533">6</text>
+    <text x="1180" y="597" font-size="30" font-weight="800" fill="#fff">GitHub 合并层</text>
+    <text x="1110" y="655" font-size="19" fill="#dce6f5">Required Check + 人工审查</text>
+    <text x="1110" y="694" font-size="19" fill="#dce6f5">分支规则阻止不合格合并</text>
+    <rect x="1110" y="718" width="350" height="34" rx="17" fill="#e55858"/><text x="1285" y="742" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">只有平台门禁才决定能否合并</text>
+  </g>
+
+  <rect x="80" y="856" width="1440" height="44" rx="22" fill="#fff3cf"/>
+  <text x="800" y="885" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="20" font-weight="700" fill="#6f5200">边界：本地状态和 Agent 自评用于协作，但不能替代签名、独立验证和 GitHub 规则</text>
+</svg>
