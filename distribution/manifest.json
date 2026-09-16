@@ -4,7 +4,7 @@
   "files": {
     ".agents/plugins/marketplace.json": "b248bd193c876dfcf12f3c2b003c140f525846f46038bac80ee5da9834034eb0",
     ".codex-plugin/plugin.json": "ce58ecc5ba451d577735b51907d2fda3d87252e486227632111896af51b5a880",
-    ".github/workflows/ci.yml": "d47cd22dac42c3273a85ab3c485048e8bba000ea0503a82ebbc08740e79cb800",
+    ".github/workflows/ci.yml": "611f0762befd3d2645e1307fecad5cc7baa2a4f143be4261170fd0d7909c5632",
     ".gitignore": "a1ec6133895985831496802031b143a7941b241f2d8476e409995a2cd2c3172c",
     "AGENTS.md": "056c3be05ceb93183771909d59d7e7254a74b8f1b291fecb4e523f5800ee7675",
     "CHANGELOG.md": "793ad6e03fbe991110f9f8f9520252de4afaba60ecccad3543d7e8c65da9861a",
@@ -36,7 +36,7 @@
     "skills/egw-ship/SKILL.md": "0d5505b42cac05bf2851f5802cf3865499dd8a63ed9e30d3ed04d565591a1691",
     "skills/egw-spec/SKILL.md": "1e691576668125ebd06fd7faeaa26ebd0ea9aaeb55c4145f9079e11587b45ec8",
     "skills/egw-verify/SKILL.md": "1134d4cb18ffa239cb3aadc1e7bc41bb51bbf0ed680c48ab3036daccd12afb5c",
-    "templates/github/evidence-gate.yml": "fc132ee80bc002e72164eb64dcbe9263134bbf9d16f0a8f9cb75cd587a57fa14",
+    "templates/github/evidence-gate.yml": "56ddb03ae652a348b40929017b1b363d1ef87e40d7fcb701d85a320c5cac4501",
     "tests/test_cli.py": "74c5d7e28215ff961f266d18d573a69e23d565ce39e855419bf50570a619c5ca",
     "tests/test_engine.py": "2638f18434b58007dc6493f293babe02aac2462ccc3401c2599ea7310adca3e8",
     "tests/test_platform.py": "6efdbcf0a9d3b2a41e408086b7a7d8cb954f1a913d406d93406cecda1e4bb04b",
@@ -101,5 +101,5 @@
     "workflow/schemas/task-contract.schema.json": "d85175bb038c5cdab2035710f0360f6f23e1b7aca1b4c971a4d8e2131c3d572d",
     "workflow/state.py": "7aa4a29e74dcd5d7dff51ecd0545a5e7441fc679cde65dc4c1fcc2f2e9a4a32e"
   },
-  "archive_sha256": "4f9b0d69bcc8dfc25753004cff84d767ad16b327487216c38aff0d2ba67ecf58"
+  "archive_sha256": "f119d5d635ad2d916ff3d4d68813db7f0712ec84147b0d216473591b7112b336"
 }
